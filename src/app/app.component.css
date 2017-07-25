@@ -1,0 +1,14 @@
+a img {
+    height: auto;
+    width: 30px;
+}
+
+a {
+    text-transform: uppercase;
+}
+
+.toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

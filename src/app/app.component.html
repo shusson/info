@@ -1,5 +1,12 @@
 <md-toolbar>
-    <button md-button routerLink="/blog">Blog</button>
-    <button md-button routerLink="/about">About</button>
+    <div class="toolbar">
+        <div class="nav">
+            <a md-button routerLink="/blog">Blog</a>
+            <a md-button routerLink="/about">About</a>
+        </div>
+        <a md-button target="_blank" href="https://github.com/shusson">
+            <img src="assets/github.png">
+        </a>
+    </div>
 </md-toolbar>
 <router-outlet></router-outlet>
