@@ -10,20 +10,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { AboutComponent } from './about/about.component';
+import { blogRoutes } from '../../jekyll/gen_blog/blog.routes';
+import { blogDecs } from '../../jekyll/gen_blog/blog.decs';
 
 @NgModule({
     declarations: [
         AppComponent,
         BlogComponent,
         PageNotFoundComponent,
-        AboutComponent
-    ],
+        AboutComponent,
+    ].concat(blogDecs),
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
         RouterModule.forRoot(
-            appRoutes,
+            blogRoutes.concat(appRoutes),
             // { enableTracing: true }
         )
     ],
