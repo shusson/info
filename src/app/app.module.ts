@@ -9,12 +9,14 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         BlogComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        AboutComponent
     ],
     imports: [
         BrowserModule,
