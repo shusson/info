@@ -52,6 +52,7 @@ module Reading
             })
             export class <%= name %>Component implements OnInit {
                 name = '<%=post.title%>';
+                date = '<%=post.date.year%>-<%=post.date.month%>-<%=post.date.day%>';
                 constructor() {
                 }
 
@@ -67,6 +68,7 @@ module Reading
             p.render(site.layouts, site.site_payload)
 
             t = "<div class='blog-view'>
+                <div class='crumb'><a routerLink='/blog'>blog</a> > {{date}}</div>
                 <div class='title'>{{name}}</div>
                 #{p}
             </div>"
