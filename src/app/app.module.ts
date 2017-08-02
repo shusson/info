@@ -11,6 +11,7 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { AboutComponent } from './about/about.component';
 import { P02082017Component } from './p02082017/p02082017.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { P02082017Component } from './p02082017/p02082017.component';
         PageNotFoundComponent,
         AboutComponent,
         P02082017Component,
+        PostComponent,
     ],
     imports: [
         BrowserModule,
