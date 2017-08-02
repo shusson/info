@@ -48,7 +48,7 @@ module Reading
             @Component({
                 selector: 'app-blog-<%= name %>',
                 templateUrl: './<%= name %>.component.html',
-                styleUrls: ['../../_site/assets/main.css']
+                styleUrls: ['../../_site/assets/main.css', '../../../src/app/post/post.component.css']
             })
             export class <%= name %>Component implements OnInit {
 
@@ -66,18 +66,21 @@ module Reading
 
             p.render(site.layouts, site.site_payload)
 
-            File.open("#{path}/#{name}.component.html", 'w') {|f| f.write(p) }
+            t = "<div class='blog-view'>
+                #{p}
+            </div>"
+
+            File.open("#{path}/#{name}.component.html", 'w') {|f| f.write(t) }
         end
     end
 
     def write_blog_component(site, dir)
         bc = '
-        <div>
-            <md-list>
-                  <% for @item in site.posts %>
-                    <md-list-item routerLink="/blog/<%=@item.title.split(" ").join("_")%>"><%=@item.title%></md-list-item>
-                  <% end %>
-            </md-list>
+        <div class="blog-view">
+            <div class="title">Posts:</div>
+            <% for @item in site.posts %>
+                <a routerLink="/blog/<%=@item.title.split(" ").join("_")%>"><%=@item.date.day%>/<%=@item.date.month%>/<%=@item.date.year%> <%=@item.title%></a>
+            <% end %>
         </div>
         '
         renderer = ERB.new(bc)
