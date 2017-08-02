@@ -10,8 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { AboutComponent } from './about/about.component';
-import { blogRoutes } from '../../jekyll/gen_blog/blog.routes';
-import { blogDecs } from '../../jekyll/gen_blog/blog.decs';
+import { P02082017Component } from './p02082017/p02082017.component';
 
 @NgModule({
     declarations: [
@@ -19,14 +18,14 @@ import { blogDecs } from '../../jekyll/gen_blog/blog.decs';
         BlogComponent,
         PageNotFoundComponent,
         AboutComponent,
-    ].concat(blogDecs),
+        P02082017Component,
+    ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
         RouterModule.forRoot(
-            blogRoutes.concat(appRoutes),
-            // { enableTracing: true }
+            appRoutes
         )
     ],
     providers: [],
