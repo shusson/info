@@ -51,7 +51,7 @@ module Reading
                 styleUrls: ['../../_site/assets/main.css', '../../../src/app/post/post.component.css']
             })
             export class <%= name %>Component implements OnInit {
-
+                name = '<%=post.title%>';
                 constructor() {
                 }
 
@@ -67,6 +67,7 @@ module Reading
             p.render(site.layouts, site.site_payload)
 
             t = "<div class='blog-view'>
+                <div class='title'>{{name}}</div>
                 #{p}
             </div>"
 
@@ -77,7 +78,6 @@ module Reading
     def write_blog_component(site, dir)
         bc = '
         <div class="blog-view">
-            <div class="title">Posts:</div>
             <% for @item in site.posts %>
                 <a routerLink="/blog/<%=@item.title.split(" ").join("_")%>"><%=@item.date.day%>/<%=@item.date.month%>/<%=@item.date.year%> <%=@item.title%></a>
             <% end %>
