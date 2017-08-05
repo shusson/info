@@ -12,6 +12,7 @@ import 'hammerjs';
 import { AboutComponent } from './about/about.component';
 import { P02082017Component } from './p02082017/p02082017.component';
 import { PostComponent } from './post/post.component';
+import { P04082017Component } from './p04082017/p04082017.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { PostComponent } from './post/post.component';
         AboutComponent,
         P02082017Component,
         PostComponent,
+        P04082017Component,
     ],
     imports: [
         BrowserModule,
