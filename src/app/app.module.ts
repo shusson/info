@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { P02082017Component } from './p02082017/p02082017.component';
 import { PostComponent } from './post/post.component';
 import { P04082017Component } from './p04082017/p04082017.component';
+import { P07082017Component } from './p07082017/p07082017.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { P04082017Component } from './p04082017/p04082017.component';
         P02082017Component,
         PostComponent,
         P04082017Component,
+        P07082017Component,
     ],
     imports: [
         BrowserModule,
