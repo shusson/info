@@ -1,0 +1,79 @@
+<div class="markdown-body">
+<h3 id="exploringgenomicdatawithsuperset">Exploring genomic data with Superset</h3>
+<p><img src="assets/superset.png" alt="forward_path" /></p>
+<p>As part of a recent hackathon we wanted to explore visualization tools
+that could help diagnose rare diseases. A critical
+part of the diagnoses process is to compare variations of the patients
+genetic information with reference information. There can be lots of
+variations, we are talking in the order of millions sometimes tens of
+millions per patient. I think a centralized tool that researchers
+can use to explore their genomic data and share useful
+visualizations is sorely missing. In the business world these kind of tools
+have been around for a while, they are generally called
+<code>business intelligence applications</code> of which the most popular is probably
+<a href="https://www.tableau.com/">Tableu</a>. For this experiement we ended up using an
+open source alternative called <a href="http://airbnb.io/projects/superset/">Superset</a>.</p>
+<p>Superset is an open source business intelligence tool built by airbnb. It
+lets you create interactive dashboards and connects to any database that
+supports SQLAlchemy. </p>
+<h4 id="deployment">Deployment</h4>
+<p>Deployment was simple and straightforward. Just follow the <a href="https://superset.incubator.apache.org/installation.html">instructions</a>
+and you'll be running a superset instance in under 10min.
+If you followed the instructions you should also have some example data
+to play with. </p>
+<h4 id="data">Data</h4>
+<p>Once you have the Superset app running you'll want to connect it to
+a database with your genomic information.
+For simplicity we concentrated on patient
+<a href="https://en.wikipedia.org/wiki/Variant_Call_Format">VCF</a> data only.
+In genomics there is no standard database or schema for storing these
+variants. In fact I would say it's one of the challenges in our industry
+at the moment but I'll save that discussion for another blog post.
+Luckily for us we already have a pipeline that produces a sqlite database
+through <a href="https://gemini.readthedocs.io/en/latest">Gemini</a>. For performance
+reasons we exported that data into a <a href="http://www.memsql.com/">memsql</a>
+server. Alternatively you could simply import a VCF into
+<a href="https://github.com/hail-is/hail">Hail</a> and export a csv to be imported
+into any database that supports SQLAlchemy.</p>
+<h4 id="usage">Usage</h4>
+<p>The following are some thoughts based on a days usage of Superset:</p>
+<p>Positives:</p>
+<ul>
+<li>It's really easy connect to any database that supports SQLAlchemy.</li>
+<li>It's easy to create custom dashboards with filters across multiple
+charts.</li>
+<li>Permissions and roles baked in.</li>
+<li>There's support for queuing SQL jobs through something they call
+<code>SQL Lab</code>.</li>
+<li>Visualizations are reusable and easily sharable.</li>
+<li>SQL queries/results are reusable and easily sharable.</li>
+<li>You can create visualizations from saved SQL queries. Creating
+a new datasource in the process.</li>
+</ul>
+<p>Negatives:</p>
+<ul>
+<li>The application seems to be driven around time series. There are lots of
+time specific visualizations and even visualizations you would think are
+not time specific, have time specific attributes. </li>
+<li>The number of charts types is quite limited and it's <a href="https://github.com/apache/incubator-superset/issues/1405">not easy to add
+new ones</a>. </li>
+<li>A lot of the charts feel like they have been designed for specific types
+of data. For example you cannot set x,y domains directly in the <code>bubblechart</code>
+instead you have to pick a <code>series</code> and set <code>metrics</code>. This is common in other charts like
+the <code>distribution</code> and <code>histogram</code>.</li>
+<li>No support of dynamic binning so you have to write the binning query yourself
+in SQL, but it's easy to create an entirely new visualiztion for the area
+you are interested in.</li>
+<li>No cross-dimensional chart interaction, but it is easy to create filters.</li>
+</ul>
+<h4 id="conclusion">Conclusion</h4>
+<p>I think Superset is a great open source product and let's you explore
+large SQL datasets with ease. Keep in mind that a lot of the
+visualizations are quite simple and require significant SQL for any
+customization. </p>
+<p>From a genomics perspective I think Superset is lacking the
+visualizations that would make it useful.
+That being said I could imagine a team of people customizing
+Superset for genomics. A lot of the fundamental features are there and
+with some simple changes to the visualizations I think it could become a
+    really useful tool in genomics. </p></div>
