@@ -1,2 +1,8 @@
-<div *ngIf="post" class="markdown-body" [innerHTML]="post.body">
+<div class="markdown-body" *ngIf="post">
+    <h3>{{post.title}}</h3>
+    <p><strong>{{post.date().join("/")}}</strong></p>
+    <p><img [src]="post.image"/></p>
+    <div [innerHTML]="post.body">
+    </div>
 </div>
+

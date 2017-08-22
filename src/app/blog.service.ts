@@ -11,7 +11,8 @@ export class Post {
                 public slug = "",
                 public timestamp = 0,
                 public updated = 0,
-                public uuid = "") {}
+                public uuid = "",
+                public image = "") {}
 
     date() {
         const date = new Date(this.timestamp);
@@ -34,7 +35,7 @@ export class BlogService {
         return this.http.get(`${environment.blogCMS}/contents?type=Post`)
             .map((v: any) => {
                 return v.data.map(p => {
-                    return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid);
+                    return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid, p.image);
                 });
             });
     }
@@ -43,7 +44,7 @@ export class BlogService {
         return this.http.get(`${environment.blogCMS}/content?slug=${slug}`)
             .map((v: any) => {
                 const p = v.data[0];
-                return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid);
+                return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid, p.image);
             });
     }
 
