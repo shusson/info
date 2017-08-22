@@ -12,33 +12,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 500px;
-    cursor: pointer;
+    max-width: 600px;
 }
 
 .title {
     text-decoration: none;
     font-size: x-large;
-    margin: 1rem;
+    margin: 5px 1rem 5px 1rem;
+    cursor: pointer;
 }
 
 .date {
-    font-weight: bold;
     margin: 5px 1rem 5px 1rem;
 }
 
 .image {
     margin: 5px 1rem 5px 1rem;
     width: 100%;
+    cursor: pointer;
 }
 
 .image img {
     height: auto;
-    width: 100%;
+    width: 90%;
 }
 
 .content {
-    width: 100%;
+    width: 90%;
     margin: 5px 1rem 5px 1rem;
 }
 
