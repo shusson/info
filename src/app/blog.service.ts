@@ -17,6 +17,10 @@ export class Post {
         const date = new Date(this.timestamp);
         return [date.getDate(), date.getMonth() + 1 , date.getFullYear()];
     }
+
+    url() {
+        return `post/${this.slug}`;
+    }
 }
 
 @Injectable()
@@ -29,7 +33,6 @@ export class BlogService {
     getPosts(): Observable<Post[]> {
         return this.http.get(`${environment.blogCMS}/contents?type=Post`)
             .map((v: any) => {
-                console.log(v);
                 return v.data.map(p => {
                     return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid);
                 });
@@ -39,8 +42,8 @@ export class BlogService {
     getPost(slug: string): Observable<Post> {
         return this.http.get(`${environment.blogCMS}/content?slug=${slug}`)
             .map((v: any) => {
-                console.log(v);
-                return new Post();
+                const p = v.data[0];
+                return new Post(p.title, p.body, p.slug, p.timestamp, p.updated, p.uuid);
             });
     }
 

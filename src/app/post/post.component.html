@@ -1,3 +1,2 @@
-<div class="markdown-body">
-  <ng-content></ng-content>
+<div *ngIf="post" class="markdown-body" [innerHTML]="post.body">
 </div>
