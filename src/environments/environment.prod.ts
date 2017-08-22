@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    blogCMS: "https://localhost:10443/api"
+    blogCMS: "https://api.shusson.info/api"
 };
