@@ -15,7 +15,7 @@ export class Post {
 
     date() {
         const date = new Date(this.timestamp);
-        return [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+        return [date.getDate(), date.getMonth() + 1 , date.getFullYear()];
     }
 }
 
@@ -36,8 +36,12 @@ export class BlogService {
             });
     }
 
-    getPost(): Observable<Post> {
-        return Observable.of<any>(new Post());
+    getPost(slug: string): Observable<Post> {
+        return this.http.get(`${environment.blogCMS}/content?slug=${slug}`)
+            .map((v: any) => {
+                console.log(v);
+                return new Post();
+            });
     }
 
 }
