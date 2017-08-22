@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 500px;
+    max-width: 500px;
     cursor: pointer;
 }
 
@@ -44,10 +44,4 @@
 
 :host /deep/ p {
     margin: 0 !important;
-}
-
-@media (max-width: 500px) {
-    .post {
-        width: 300px;
-    }
 }
