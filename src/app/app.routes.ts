@@ -18,6 +18,7 @@ export const appRoutes: Routes = [
     {path: 'p14082017', component: P14082017Component},
     {path: 'p18082017', component: P18082017Component},
     {path: 'blog/post/:slug', component: PostComponent},
+    {path: 'post/:slug', component: PostComponent},
     {path: 'about', component: AboutComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
