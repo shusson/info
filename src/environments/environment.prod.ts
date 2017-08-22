@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    blogCMS: "https://localhost:10443/api"
 };

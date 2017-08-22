@@ -16,6 +16,7 @@ import { P04082017Component } from './p04082017/p04082017.component';
 import { P07082017Component } from './p07082017/p07082017.component';
 import { P14082017Component } from './p14082017/p14082017.component';
 import { P18082017Component } from './p18082017/p18082017.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { P18082017Component } from './p18082017/p18082017.component';
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         MaterialModule,
         RouterModule.forRoot(

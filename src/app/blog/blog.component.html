@@ -1,7 +1,3 @@
 <div class="view">
-    <a routerLink="/p18082017">18-08-2017 Exploring genomic data with Superset</a>
-    <a routerLink="/p14082017">14-08-2017 Finding health services with Google Maps API</a>
-    <a routerLink="/p07082017">07-08-2017 Interpreting traceroute results (asymmetric paths)</a>
-    <a routerLink="/p04082017">04-08-2017 Vega! A Visualization grammar</a>
-    <a routerLink="/p02082017">02-08-2017 Hosting an Angular app with Firebase</a>
+    <a *ngFor="let post of posts">{{ post.title }} - {{ post.date().join("/") }}</a>
 </div>
