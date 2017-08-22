@@ -22,6 +22,10 @@ export class Post {
     url() {
         return `post/${this.slug}`;
     }
+
+    elipse() {
+        return this.body.slice(0, 250).concat("...");
+    }
 }
 
 @Injectable()
