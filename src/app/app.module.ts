@@ -10,12 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { AboutComponent } from './about/about.component';
-import { P02082017Component } from './p02082017/p02082017.component';
 import { PostComponent } from './post/post.component';
-import { P04082017Component } from './p04082017/p04082017.component';
-import { P07082017Component } from './p07082017/p07082017.component';
-import { P14082017Component } from './p14082017/p14082017.component';
-import { P18082017Component } from './p18082017/p18082017.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,12 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
         BlogComponent,
         PageNotFoundComponent,
         AboutComponent,
-        P02082017Component,
         PostComponent,
-        P04082017Component,
-        P07082017Component,
-        P14082017Component,
-        P18082017Component,
     ],
     imports: [
         BrowserModule,
