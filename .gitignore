@@ -45,3 +45,5 @@ _site
 .sass-cache
 
 gen_blog
+
+.firebase
