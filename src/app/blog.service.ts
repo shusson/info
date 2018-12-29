@@ -34,21 +34,23 @@ export class BlogService {
     constructor(private http: HttpClient) {}
 
     getPosts(): Observable<Post[]> {
-        return this.http.get(`${environment.blogCMS}/contents?type=Post`).pipe(
-            map((v: any) => {
-                return v.data.map(p => {
-                    return new Post(
-                        p.title,
-                        p.body,
-                        p.slug,
-                        p.timestamp,
-                        p.updated,
-                        p.uuid,
-                        p.image
-                    );
-                });
-            })
-        );
+        return this.http
+            .get(`${environment.blogCMS}/contents?type=Post&count=-1`)
+            .pipe(
+                map((v: any) => {
+                    return v.data.map(p => {
+                        return new Post(
+                            p.title,
+                            p.body,
+                            p.slug,
+                            p.timestamp,
+                            p.updated,
+                            p.uuid,
+                            p.image
+                        );
+                    });
+                })
+            );
     }
 
     getPost(slug: string): Observable<Post> {
