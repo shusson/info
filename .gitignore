@@ -47,3 +47,5 @@ _site
 gen_blog
 
 .firebase
+
+yarn-error.log

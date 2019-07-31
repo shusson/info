@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    blogCMS: "https://api.shusson.info/ponzu/api"
+    blogCMS: "https://api.shusson.info/api"
 };
