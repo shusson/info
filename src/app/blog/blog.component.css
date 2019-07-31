@@ -27,6 +27,7 @@
 }
 
 .image {
+    display: flex;
     margin: 5px 1rem 5px 1rem;
     width: 100%;
     cursor: pointer;
@@ -34,7 +35,9 @@
 
 .image img {
     height: auto;
-    width: 90%;
+    width: auto;
+    max-height: 250px;
+    max-width: 100%;
 }
 
 .content {
