@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "../environments/environment";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import moment from "moment";
 
 export class Post {
     constructor(
@@ -16,8 +17,8 @@ export class Post {
     ) {}
 
     date() {
-        const date = new Date(this.timestamp);
-        return [date.getDate(), date.getMonth() + 1, date.getFullYear()];
+        const date = moment(this.timestamp);
+        return date.format("DD/MM/YYYY")
     }
 
     url() {
