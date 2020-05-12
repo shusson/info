@@ -18,7 +18,7 @@ export class Post {
 
     date() {
         const date = moment(this.timestamp);
-        return date.format("DD/MM/YY")
+        return date.format("DD/MM/YYYY")
     }
 
     url() {
