@@ -7,11 +7,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { appRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatToolbarModule } from '@angular/material';
 import 'hammerjs';
 import { AboutComponent } from './about/about.component';
 import { PostComponent } from './post/post.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
     declarations: [
