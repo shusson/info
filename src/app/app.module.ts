@@ -13,6 +13,7 @@ import { PostComponent } from './post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
         BrowserAnimationsModule,
         MatToolbarModule,
         MatButtonModule,
+        LazyLoadImageModule,
         RouterModule.forRoot(
             appRoutes
         )
